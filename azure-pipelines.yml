@@ -3,6 +3,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+  
+variables:
+  - name: System.Debug
+    value: true
 
 stages:
 - stage: BuildApp
