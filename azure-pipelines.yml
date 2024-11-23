@@ -17,10 +17,7 @@ stages:
     steps:
     - script: echo building frontend app
       displayName: build frontend app
-    - script: echo running unit tests for frontend app
-      displayName: unit tests frontend
-
-  - job: BuildBackendApp
+  - job: Deploy to Uat
     displayName: Build Backend App
     steps:
     - script: echo building backend app
@@ -28,7 +25,8 @@ stages:
     - script: echo running unit tests for backend app
       displayName: unit tests backend
 
-- stage: DeployDev
+- stage: Deploy to Dev
+  dependsOn: []
   displayName: Deploy to DEV environment
   jobs:
   - job: DeployFrontendDev
@@ -44,6 +42,7 @@ stages:
       displayName: deploy backend app to DEV
 
 - stage: DeployProd
+  dependsOn: []
   displayName: Deploy to PROD environment
   pool:
     vmImage: 'ubuntu-latest'
