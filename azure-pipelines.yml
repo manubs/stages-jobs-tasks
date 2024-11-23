@@ -17,7 +17,7 @@ stages:
     steps:
     - script: echo building frontend app
       displayName: build frontend app
-  - job: Deploy to Uat
+  - job: DeploytoUat
     displayName: Build Backend App
     steps:
     - script: echo building backend app
