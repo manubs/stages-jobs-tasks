@@ -25,7 +25,7 @@ stages:
     - script: echo running unit tests for backend app
       displayName: unit tests backend
 
-- stage: Deploy to Dev
+- stage: DeploytoDev
   dependsOn: []
   displayName: Deploy to DEV environment
   jobs:
